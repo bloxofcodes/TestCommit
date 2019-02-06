@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WorkLoadSummary" targetNamespace="http://tempuri.org/WorkLoadSummary.xsd" xmlns:mstns="http://tempuri.org/WorkLoadSummary.xsd" xmlns="http://tempuri.org/WorkLoadSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WorkLoadSummary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="WorkLoadSummary" msprop:Generator_UserDSName="WorkLoadSummary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtWorkLoadSumm" msprop:Generator_TableClassName="dtWorkLoadSummDataTable" msprop:Generator_TableVarName="tabledtWorkLoadSumm" msprop:Generator_TablePropName="dtWorkLoadSumm" msprop:Generator_RowDeletingName="dtWorkLoadSummRowDeleting" msprop:Generator_RowChangingName="dtWorkLoadSummRowChanging" msprop:Generator_RowEvHandlerName="dtWorkLoadSummRowChangeEventHandler" msprop:Generator_RowDeletedName="dtWorkLoadSummRowDeleted" msprop:Generator_UserTableName="dtWorkLoadSumm" msprop:Generator_RowChangedName="dtWorkLoadSummRowChanged" msprop:Generator_RowEvArgName="dtWorkLoadSummRowChangeEvent" msprop:Generator_RowClassName="dtWorkLoadSummRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AssetGroup" msprop:Generator_ColumnVarNameInTable="columnAssetGroup" msprop:Generator_ColumnPropNameInRow="AssetGroup" msprop:Generator_ColumnPropNameInTable="AssetGroupColumn" msprop:Generator_UserColumnName="AssetGroup" type="xs:string" minOccurs="0" />
+              <xs:element name="StaffCount" msprop:Generator_ColumnVarNameInTable="columnStaffCount" msprop:Generator_ColumnPropNameInRow="StaffCount" msprop:Generator_ColumnPropNameInTable="StaffCountColumn" msprop:Generator_UserColumnName="StaffCount" type="xs:int" minOccurs="0" />
+              <xs:element name="IssuedWorkOrders" msprop:Generator_ColumnVarNameInTable="columnIssuedWorkOrders" msprop:Generator_ColumnPropNameInRow="IssuedWorkOrders" msprop:Generator_ColumnPropNameInTable="IssuedWorkOrdersColumn" msprop:Generator_UserColumnName="IssuedWorkOrders" type="xs:string" minOccurs="0" />
+              <xs:element name="OutStandingWorkOrders" msprop:Generator_ColumnVarNameInTable="columnOutStandingWorkOrders" msprop:Generator_ColumnPropNameInRow="OutStandingWorkOrders" msprop:Generator_ColumnPropNameInTable="OutStandingWorkOrdersColumn" msprop:Generator_UserColumnName="OutStandingWorkOrders" type="xs:int" minOccurs="0" />
+              <xs:element name="CompletedWorkOrders" msprop:Generator_ColumnVarNameInTable="columnCompletedWorkOrders" msprop:Generator_ColumnPropNameInRow="CompletedWorkOrders" msprop:Generator_ColumnPropNameInTable="CompletedWorkOrdersColumn" msprop:Generator_UserColumnName="CompletedWorkOrders" type="xs:int" minOccurs="0" />
+              <xs:element name="AverageWoPerStaff" msprop:Generator_ColumnVarNameInTable="columnAverageWoPerStaff" msprop:Generator_ColumnPropNameInRow="AverageWoPerStaff" msprop:Generator_ColumnPropNameInTable="AverageWoPerStaffColumn" msprop:Generator_UserColumnName="AverageWoPerStaff" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MonthlyCompletionTimeKPI" targetNamespace="http://tempuri.org/MonthlyCompletionTimeKPI.xsd" xmlns:mstns="http://tempuri.org/MonthlyCompletionTimeKPI.xsd" xmlns="http://tempuri.org/MonthlyCompletionTimeKPI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MonthlyCompletionTimeKPI" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MonthlyCompletionTimeKPI" msprop:Generator_UserDSName="MonthlyCompletionTimeKPI">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MonthlyCompletionTimeKPIDT" msprop:Generator_TableClassName="MonthlyCompletionTimeKPIDTDataTable" msprop:Generator_TableVarName="tableMonthlyCompletionTimeKPIDT" msprop:Generator_RowChangedName="MonthlyCompletionTimeKPIDTRowChanged" msprop:Generator_TablePropName="MonthlyCompletionTimeKPIDT" msprop:Generator_RowDeletingName="MonthlyCompletionTimeKPIDTRowDeleting" msprop:Generator_RowChangingName="MonthlyCompletionTimeKPIDTRowChanging" msprop:Generator_RowEvHandlerName="MonthlyCompletionTimeKPIDTRowChangeEventHandler" msprop:Generator_RowDeletedName="MonthlyCompletionTimeKPIDTRowDeleted" msprop:Generator_RowClassName="MonthlyCompletionTimeKPIDTRow" msprop:Generator_UserTableName="MonthlyCompletionTimeKPIDT" msprop:Generator_RowEvArgName="MonthlyCompletionTimeKPIDTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" type="xs:string" minOccurs="0" />
+              <xs:element name="Target" msprop:Generator_ColumnVarNameInTable="columnTarget" msprop:Generator_ColumnPropNameInRow="Target" msprop:Generator_ColumnPropNameInTable="TargetColumn" msprop:Generator_UserColumnName="Target" type="xs:long" minOccurs="0" />
+              <xs:element name="Min" msprop:Generator_ColumnVarNameInTable="columnMin" msprop:Generator_ColumnPropNameInRow="Min" msprop:Generator_ColumnPropNameInTable="MinColumn" msprop:Generator_UserColumnName="Min" type="xs:long" minOccurs="0" />
+              <xs:element name="Middle" msprop:Generator_ColumnVarNameInTable="columnMiddle" msprop:Generator_ColumnPropNameInRow="Middle" msprop:Generator_ColumnPropNameInTable="MiddleColumn" msprop:Generator_UserColumnName="Middle" type="xs:long" minOccurs="0" />
+              <xs:element name="Max" msprop:Generator_ColumnVarNameInTable="columnMax" msprop:Generator_ColumnPropNameInRow="Max" msprop:Generator_ColumnPropNameInTable="MaxColumn" msprop:Generator_UserColumnName="Max" type="xs:long" minOccurs="0" />
+              <xs:element name="Others" msprop:Generator_ColumnVarNameInTable="columnOthers" msprop:Generator_ColumnPropNameInRow="Others" msprop:Generator_ColumnPropNameInTable="OthersColumn" msprop:Generator_UserColumnName="Others" type="xs:long" minOccurs="0" />
+              <xs:element name="Expected" msprop:Generator_ColumnVarNameInTable="columnExpected" msprop:Generator_ColumnPropNameInRow="Expected" msprop:Generator_ColumnPropNameInTable="ExpectedColumn" msprop:Generator_UserColumnName="Expected" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,2747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03E92FB8-ADD7-4820-8F63-AE16075EE5A4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QReports</RootNamespace>
+    <AssemblyName>QReports</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PerformanceManagerController.cs" />
+    <Compile Include="Controllers\PmWorkOrderController.cs" />
+    <Compile Include="Controllers\WorkOrderController.cs" />
+    <Compile Include="CustomDS\CmpltTimeDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CmpltTimeDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\MonthlyCompletionTimeKPI.cs">
+      <DependentUpon>MonthlyCompletionTimeKPI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\MonthlyCompletionTimeKPI.Designer.cs">
+      <DependentUpon>MonthlyCompletionTimeKPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\PMWoDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMWoDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\QREPORTS.cs">
+      <DependentUpon>QREPORTS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\QREPORTS.designer.cs">
+      <DependentUpon>QREPORTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\ResponseTimeKpiSumm1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResponseTimeKpiSumm.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\RespoTimeDetails1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RespoTimeDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\WOCmpltRateDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WOCmpltRateDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\WODetailsDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WODetailsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDS\WorkLoadSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkLoadSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CmpltTimeDetailsModel.cs" />
+    <Compile Include="Models\PMWoDetailsModel.cs" />
+    <Compile Include="Models\ResponseTimeKpiSummModel.cs" />
+    <Compile Include="Models\WoCmpltRateModel.cs" />
+    <Compile Include="Models\WoDetailsModel.cs" />
+    <Compile Include="Models\WorkLoadSummaryModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QREPORT_COMPLETION_TIME_KPI_REF.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CompletionTimeDetails\CmpltTimeDetails.aspx.cs">
+      <DependentUpon>CmpltTimeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CompletionTimeDetails\CmpltTimeDetails.aspx.designer.cs">
+      <DependentUpon>CmpltTimeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CompletionTimeKPISummary\CompletionTimeKPISummary.aspx.cs">
+      <DependentUpon>CompletionTimeKPISummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CompletionTimeKPISummary\CompletionTimeKPISummary.aspx.designer.cs">
+      <DependentUpon>CompletionTimeKPISummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MonthlyBreakDownSummary\MonthlyBreakDownReport.aspx.cs">
+      <DependentUpon>MonthlyBreakDownReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlyBreakDownSummary\MonthlyBreakDownReport.aspx.designer.cs">
+      <DependentUpon>MonthlyBreakDownReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MonthlyCompletionTimeKPI\MonthlyCompletionTimeKPI.aspx.cs">
+      <DependentUpon>MonthlyCompletionTimeKPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlyCompletionTimeKPI\MonthlyCompletionTimeKPI.aspx.designer.cs">
+      <DependentUpon>MonthlyCompletionTimeKPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MonthlyResponseTimeKPI\MonthlyRespoTimeKpiDetails.aspx.cs">
+      <DependentUpon>MonthlyRespoTimeKpiDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlyResponseTimeKPI\MonthlyRespoTimeKpiDetails.aspx.designer.cs">
+      <DependentUpon>MonthlyRespoTimeKpiDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\OutstandingWorkOrders\OutstandingWorkOrders.aspx.cs">
+      <DependentUpon>OutstandingWorkOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\OutstandingWorkOrders\OutstandingWorkOrders.aspx.designer.cs">
+      <DependentUpon>OutstandingWorkOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PMWorkOrders\PMWorkOrdersDetails.aspx.cs">
+      <DependentUpon>PMWorkOrdersDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PMWorkOrders\PMWorkOrdersDetails.aspx.designer.cs">
+      <DependentUpon>PMWorkOrdersDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResponseTimeDetails\RespoTimeDetails.aspx.cs">
+      <DependentUpon>RespoTimeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResponseTimeDetails\RespoTimeDetails.aspx.designer.cs">
+      <DependentUpon>RespoTimeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResponseTimeKpiSummaryReport.aspx.cs">
+      <DependentUpon>ResponseTimeKpiSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResponseTimeKpiSummaryReport.aspx.designer.cs">
+      <DependentUpon>ResponseTimeKpiSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResponseTimeKPISummary\ResponseTimeKpiSumm.aspx.cs">
+      <DependentUpon>ResponseTimeKpiSumm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResponseTimeKPISummary\ResponseTimeKpiSumm.aspx.designer.cs">
+      <DependentUpon>ResponseTimeKpiSumm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WorkLoadSummary\WorkLoad.aspx.cs">
+      <DependentUpon>WorkLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkLoadSummary\WorkLoad.aspx.designer.cs">
+      <DependentUpon>WorkLoad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WorkOrderCompletionRate\WoCmpltRateWebForm.aspx.cs">
+      <DependentUpon>WoCmpltRateWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkOrderCompletionRate\WoCmpltRateWebForm.aspx.designer.cs">
+      <DependentUpon>WoCmpltRateWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WorkOrderDetails\WorkOrderDetails.aspx.cs">
+      <DependentUpon>WorkOrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkOrderDetails\WorkOrderDetails.aspx.designer.cs">
+      <DependentUpon>WorkOrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SAADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAAModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAAModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAAModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAAModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAAModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="T_1C.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_ESCALADE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_EXPORT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_EXPORT_XLS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_FONCTION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_FONCTION_EXTERNE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_IMPORT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_IMPORTS_OBJ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTION_POPUP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTIV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ACTIV_LIGNEBT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ADRESSE_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_AFFAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ALERTE_MV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ALERTE_MV_ASC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ALERTE_MV_DESC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_APPRO_STOCK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ARBO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ARBO_UI_DEFAUT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ARRET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ARRET_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ARRET_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_AVOIR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_AVOIR_CMDE_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_AVOIR_FACT_ACHAT_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_AVOIR_FACT_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BASE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BASE_SYNCHRO_DISTANTE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BLACKLIST_DEVICE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BLOCKED_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BPU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BRUTE_FORCE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BR_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT_ALERT_DEMANDEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT_GAMME2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT_LIGNE_GAMME2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT_LIGNE_GAMME2_BON_MAUVAIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT_LIGNE_GAMME2_MESURE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT_LIGNE_GAMME2_OK_NOK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BT_LIGNE_GAMME2_OUINON.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BUDGET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_BUTTON.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CALENDRIER_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CALENDRIER_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CALENDRIER_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CALENDRIER_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CALIBRAGE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAL_PERS_COURANT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAL_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CARBURANT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CARTE_GRISE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CASE_CONFIG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAUSE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAYON_CODE_COMPT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAYON_REFLEX_HISTO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAYON_REFLEX_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CENTRE_PROFIT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CFG_MENU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMPS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMPS_EXPORT_PERSO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMPS_ORDERBY_EXPORT_PERSO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMP_FILTRE_PERSO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMP_FILTRE_PERSO_BOOL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMP_FILTRE_PERSO_DATE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMP_FILTRE_PERSO_FLOAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMP_FILTRE_PERSO_INT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMP_FILTRE_PERSO_LIE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHAMP_FILTRE_PERSO_STR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHANGE_CLIENT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CHGMT_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CLE_PRIMAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CODE_COMPTABLE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CODE_POSITION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COEFF_F_CARB.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COEFF_F_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COEFF_F_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COEFF_F_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMMANDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMMANDE2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMPTE_ACHAT_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMPTE_ACHAT_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMPTE_ACHAT_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMPTE_VENTE_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMPTE_VENTE_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMPTE_VENTE_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COND_REGL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONFIG_ACCUEIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONFLITS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONSIGNATION_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONSTAT_EDL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONSTRUCTEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONTEXT_AUDROS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONTRAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CONTRAT_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CORPS_MAIL_TYPE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COUT_FIXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COUT_FIXE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COUT_FIXE_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COUT_FIXE_DEVIS_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COUT_FIXE_FACTURE_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COUT_FIXE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CPT_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CPT_CARB.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CPT_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CPT_DIVERS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CPT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CRITIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CSQ_EXPLOIT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CUVE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DAP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DECLENCH.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DECLENCHEUR_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DECLENCHEUR_IP_CAL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DECLENCHEUR_IP_CPT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DECLENCH_APERIODIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DECL_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DEFAUT_LIGNE_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DEGDURGENCE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DEMANDEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DEPRECIATION_AN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_CAL_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_CAL_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_CAL_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_CAL_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_PLAGE_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_PLAGE_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_PLAGE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DETAIL_VALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DEVICE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DEVIS_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DOP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DROITS_DIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_DS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EDL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EFFET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ENSEMBLE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EQUIV_ETAT_MM_X3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EQUIV_ETAT_X3_MM.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EQUIV_FRAIS_X3_MM.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_AVOIR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BR_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BT_CAYON_PRISERDV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BT_CAYON_PRISERDV_DEPL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BT_CONCURRENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_BT_NO_MODIF_PLANNING.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_CMDE_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_CONTRAT_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_CONTRAT_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_DAP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_DEVIS_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_DS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_FACTURATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_FACTURATION_LIGNEBL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_FACTURE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_FACTURE_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_FACTURE_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_FBLTE_DAP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_FRAIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_HABILITATION_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_INVENTAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_LIGNE_BR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_LIGNE_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_LIGNE_DS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_MATRICULE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_REEXPORT_X3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_TRANSFERT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_USER.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ETAT_US_MAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EVAL_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EVAL_FOURN_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EVAL_FOURN_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EXPORT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_EXPORT_PERSO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FABRICANT_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FACT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FACTURE_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FACT_VOLVO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAISABILITE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_CHAMP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_CNEH_1.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_CNEH_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_CNEH_3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_CNEH_4.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_EDL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_EVAL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_FACTURE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_GAMME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_GAMME2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_HABILITATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_SOUS_LIGNE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAMILLE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FAVORIS_RPT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FERIES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FILTRE_PERSO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FONCTION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FONCTION_PERS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FOURNISSEUR_HABILITATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FRAIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FRAIS_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FRAIS_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FRAIS_CMDE2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_FRAIS_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GAMME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GAMME2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GEOLOC_TYPES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GESTION_SUPPRESSION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GROUPE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GROUPE_DEST_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GTB_ALARME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_GTB_CPT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HABILITATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HABILITATION_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_CC_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_CMDE2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_CPT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_DOP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_ETATS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_FRAIS_STOCK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_GOMME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_KM_PNEU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_LIEU_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_MESURE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_NUMERO_BI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_OBJ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_PRIXKM_VOLVO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_SE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_SMS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTO_VERSIO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_IMG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_IMG_ARBO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INCOTERM.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INDICATEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INDIC_OBJ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INDIC_TAUX.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INFO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INFO_ARBO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INFO_IMAGE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INFO_INDICATEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INFO_LIST_INDIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INFO_TEXT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INTERLOC_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INTERLOC_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INVENTAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_INV_EQ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ITEM_GAMME2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_KIT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LANGUES_IHM.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LGDIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBELLES_CR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_4.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_5.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_6.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_7.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_CMDE_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_HA1.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_HA_MAG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_LIGNE_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_LIGNE_CMDE2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIBRE_LIGNE_CMDE3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_ACHAT_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_ACTIONMAIL_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_BT_ARBO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_BT_BPU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_BT_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_BT_DEVIS_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_BT_GAMME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_BT_LIGNE_GAMME2_IMG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_BT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CAL_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CAL_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CAL_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CAL_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CAUSE_EFFET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CAUSE_REMEDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CC_METIER.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CC_VISEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CFG_MENU_BUTTON.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CLIENT_ADRESSE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONSIGNATION_BT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONSIGNATION_RESP_C.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONSIGNATION_RESP_D.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONSIGNATION_VALID_C.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONSIGNATION_VALID_D.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONTRAT_CLIENT_DEGDURG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONTRAT_CLIENT_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONTRAT_CLIENT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONTRAT_FOURN_DEM.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONTRAT_TITRE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_CONTRAT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DAP_TRANSFERT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DEVIS_ACHAT_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DEVIS_F_BPU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DEVIS_F_CLI_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DEVIS_F_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DI_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DI_JH_INTERV_PREFERE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_DOP_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_EFFET_CAUSE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_EFFET_REMEDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_EMETTEUR_ALERTE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_EXPORT_CHAMPS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FACTURE_F_BPU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FACTURE_F_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FACT_F_CLI_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FACT_F_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAMILLE_CHAMBRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAMILLE_MATERIEL_EDL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAMILLE_TRAV_GAMME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAMUI_CAUSE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAMUI_EFFET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAMUI_TITREBT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAMUI_TITREDI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAM_PIECE_ZONES_LIBRES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FAM_UI_ZONES_LIBRES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FOURNISSEUR_ACTIV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FRAIS2_CMD_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FRAIS_CMD_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FRAIS_LIGNE_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FRAIS_LIGNE_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FRAIS_LIGNE_CMDE2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_FRAIS_LIGNE_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_HAB_REQUISE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_HAB_REQUISE_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_HAB_REQUISE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_IP_BPU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_IP_GAMME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_IP_GROUPE_IPS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_ITEM_GAMME2_IMG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_KIT_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_LC_DETVALTAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_LIGNE_BT_ARBO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_LIGNE_BT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_LIGNE_GAMME2_IMG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_LIST_INDIC_INDIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_MATERIEL_CONSTAT_BT_EDL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_MESURE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_MESURE_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_MESURE_IP_MODELE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_MESURE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_OBJ_ESCALADE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_OI_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_OI_MATIERE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PIECE_PIECE_EQ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PIECE_UNITECMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_BR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_BR_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_BS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_CMDE_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_DAP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_DEVIS_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_DS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_FACTURE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_FACTURE_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_FACTURE_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_FBLTE_DAP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_INVENTAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_LIGNE_BR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_LIGNE_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_LIGNE_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_LIGNE_DS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_MATRICULE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_TRANSFERT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_PROFIL_ETAT_US_MAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_RGP_UIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SESSION_HAB_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SESSION_STOCK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_BUDGET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_CC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_DEMANDEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_FAMILLE_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_FAMILLE_TRAV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_FAMILLE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_LIEU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_MAGASIN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_SERVICE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_TT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_TYPE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_UIS_AUTORISES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_UIS_INTERDITES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_UIS_OK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_USER.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SITE_UTILISATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_SLA_CONTRAT_CLI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_TRANSFERT_MAG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_TYPE_CHAMBRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_TYPE_DEST_CORPS_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_TYPE_EXPORT_CHAMPS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_TYPE_UI_ZONES_LIBRES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_UI_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_ALERTE_CONTRAT_C.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_ALERTE_CONTRAT_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_BUDGET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_CFG_MENU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_CONFIG_ACCUEIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_FAVORIS_RPT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_INDIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_INDIC_OBJ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_INDIC_TAUX.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_LISTES_GEN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_MAG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_OBJ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_OLD_PWD.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_PREFILTRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_USER_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_VISEUR_VISA_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_VISEUR_VISA_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_VISEUR_VISA_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_VISEUR_VISA_DOP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_ZO_ETAT_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEN_ZO_TT_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIEUSTOCK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BL_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BR_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BR_CMDE_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BR_MATRICULE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BR_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BS_MATRICULE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BS_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_BT_ALERT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_CMDE2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_CMDE2_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DAP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DA_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DEVIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DEVIS_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DEVIS_F_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DEVIS_F_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DEVIS_F_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DEVIS_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DOP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DOP_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DS_MATRICULE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_DS_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_EDL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_EVAL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_EVAL_BT_MODELE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_EVAL_CMDE_MODELE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_EVAL_OBJ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACTURE_F.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACTURE_F_CARB.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACTURE_F_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACTURE_F_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACTURE_F_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACT_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_FACT_CMDE_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_GAMME2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_INV_EQ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIGNE_TAXE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LIST_INDIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LOCK_OBJET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LOT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MAGASIN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MAG_AUTORISES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MAIL_DEST.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MATERIEL_EDL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MATIERE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MATRICULE_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MESURE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MESURE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_METIER.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_METIER_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MODE_INVENTAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MODE_RECONDUCTION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MODIF.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MODIF_FRAIS_LIGNESBT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MODULES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MONNAIE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MOTIF_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MVT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MVTS_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NATURE_ARRET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NAV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NBR_SECTION_INDIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NOEUD.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NOMENC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NOMENC_CTR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NOMENC_FOURN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NOMENC_MATRICULE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NOTE_EVAL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_NUM_SERIE_PNEU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_OBJECTIF.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_OBJ_ESCALADE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_OCCUP_CHAMBRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_OI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_ACHAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_APPS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_ARIBA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_AUDROS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_AX.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_COMPTE_USER.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_COULEUR_ETAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_CO_SAGE100.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_FACTURATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_GAMMES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_GE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_GS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_IP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_LDAP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_LISTES_GEN.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_MAGASINIER.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_MAIL_ETAT_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_NAV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_NUMERO_BI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_PLANNING.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_RESSOURCES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_RPT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_SAGE300.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_SMS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_SPE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_STOCK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_TYPE_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_TYPE_MAIL_ETAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PARAMS_X3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PHOTO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PHOTO_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PHOTO_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PIECE_BPU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PIECE_REF_CONST.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PLAGE_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PLAGE_INTERV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PLAGE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_POINT_PCVUE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_POINT_TIME.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_POLITESSE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_POSITION_PNEU.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_POUVOIR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PREV_OBJ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PROFILE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_REAPPRO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RECAP_SYNCHRO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RECEPTION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_REGION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_REGLE_DI_TO_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_REMEDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RESP_AFFAIRES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RETOUR_SMS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RGP_UIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SCANPAL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SENS_VOIE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SERVICE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SESSION_HABILITATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SESSION_INVENTAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SESSION_INV_EQ.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SITE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SLA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SOCIETE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SOCIETE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SOUS_ENSEMBLE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SOUS_FAMILLE_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SOUS_FAMILLE_PIECE_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SOUS_LIGNE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SPECIALITE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_STOCK.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SYS_DB_MASTERKEY.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TABLE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TAXE_COMPLEX.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TEXT_CASE_PLANNING.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TEXT_INFOBULLE_PLANNING.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TITRE_BT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TITRE_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TMP_BIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TMP_IMG.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TMP_ZL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TPS_MACHINE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TVA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_ACTION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_ACTIV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_ADR_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_ARRET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_BR_CMDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_CASE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_CHAMP.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_COMMANDE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_CONFLIT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_CONTRAT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_CONTRAT_CLIENT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_CTR_VOLVO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_DEST.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_DI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_ENTREE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_EVAL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_EXPORT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_GARANTIE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_INVENTAIRE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_INVENTAIRE_DEVIS_HA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_LIEN_MAIL.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_LIEN_SMS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_MESURE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_MVT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_OBJET.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_PB1.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_PB_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_PB_3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_PRESENCE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_PRODUIT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_REPARTITION_FRAIS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_REPR_INDIC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_SESSION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_SORTIE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_TRAV.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TYPE_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UIS_AUTORISEES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UI_DEP_ANALYSE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UI_INFOS_LIBRES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UI_INFOS_TECH.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UI_INTERDIT.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UI_VOLVO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UNITES.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UNITE_MESURE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UNIT_TPS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_URL_AUDROS.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_USER.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UTILISATION.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_VILLE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_VISEUR_HA.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZC.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZO.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_PIECE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_1.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_10.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_2.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_3.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_4.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_5.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_6.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_7.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_8.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONES_LIBRES_UI_2_COMBO_9.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONE_ANALYTIQUE_DEMANDEUR.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONE_CRITIQUE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONE_LIBRE_BT_CB.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ZONE_SE.cs">
+      <DependentUpon>SAAModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-flatly.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Reports\CompletionTimeDetails\CmpltTimeDetails.aspx" />
+    <Content Include="Reports\CompletionTimeKPISummary\CompletionTimeKPISummary.aspx" />
+    <Content Include="Reports\MonthlyBreakDownSummary\MonthlyBreakDownReport.aspx" />
+    <Content Include="Reports\MonthlyCompletionTimeKPI\MonthlyCompletionTimeKPI.aspx" />
+    <Content Include="Reports\MonthlyResponseTimeKPI\MonthlyRespoTimeKpiDetails.aspx" />
+    <Content Include="Reports\OutstandingWorkOrders\OutstandingWorkOrders.aspx" />
+    <Content Include="Reports\PMWorkOrders\PMWorkOrdersDetails.aspx" />
+    <Content Include="Reports\ResponseTimeDetails\RespoTimeDetails.aspx" />
+    <Content Include="Reports\ResponseTimeKpiSummaryReport.aspx" />
+    <Content Include="Reports\ResponseTimeKPISummary\ResponseTimeKpiSumm.aspx" />
+    <Content Include="Reports\WorkLoadSummary\WorkLoad.aspx" />
+    <Content Include="Reports\WorkOrderCompletionRate\WoCmpltRateWebForm.aspx" />
+    <Content Include="Reports\WorkOrderDetails\WorkOrderDetails.aspx" />
+    <Content Include="SAAModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SAAModel.edmx</DependentUpon>
+      <LastGenOutput>SAAModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SAAModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SAAModel.edmx</DependentUpon>
+      <LastGenOutput>SAAModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SAADataSet.xsc">
+      <DependentUpon>SAADataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\WorkLoadSummary.xsc">
+      <DependentUpon>WorkLoadSummary.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\WOCmpltRateDS.xsc">
+      <DependentUpon>WOCmpltRateDS.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\PMWoDetails.xsc">
+      <DependentUpon>PMWoDetails.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\CmpltTimeDetails.xsc">
+      <DependentUpon>CmpltTimeDetails.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\CmpltTimeDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CmpltTimeDetails.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="CustomDS\CmpltTimeDetails.xss">
+      <DependentUpon>CmpltTimeDetails.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\MonthlyCompletionTimeKPI.xsc">
+      <DependentUpon>MonthlyCompletionTimeKPI.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\CompletionTimeKPISummary.xsc">
+      <DependentUpon>CompletionTimeKPISummary.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\CompletionTimeKPISummary.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CompletionTimeKPISummary.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="CustomDS\CompletionTimeKPISummary.xss">
+      <DependentUpon>CompletionTimeKPISummary.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\MonthlyCompletionTimeKPI.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MonthlyCompletionTimeKPI1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="CustomDS\MonthlyCompletionTimeKPI.xss">
+      <DependentUpon>MonthlyCompletionTimeKPI.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\PMWoDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PMWoDetails.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="CustomDS\PMWoDetails.xss">
+      <DependentUpon>PMWoDetails.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\QREPORTS.xsc">
+      <DependentUpon>QREPORTS.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\QREPORTS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QREPORTS1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="CustomDS\QREPORTS.xss">
+      <DependentUpon>QREPORTS.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\ResponseTimeKpiSumm.xsc">
+      <DependentUpon>ResponseTimeKpiSumm.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\ResponseTimeKpiSumm.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResponseTimeKpiSumm1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="CustomDS\ResponseTimeKpiSumm.xss">
+      <DependentUpon>ResponseTimeKpiSumm.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\RespoTimeDetails.xsc">
+      <DependentUpon>RespoTimeDetails.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\RespoTimeDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RespoTimeDetails1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="CustomDS\RespoTimeDetails.xss">
+      <DependentUpon>RespoTimeDetails.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\WOCmpltRateDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WOCmpltRateDS.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="CustomDS\WOCmpltRateDS.xss">
+      <DependentUpon>WOCmpltRateDS.xsd</DependentUpon>
+    </Content>
+    <Content Include="CustomDS\WODetailsDS.xsc">
+      <DependentUpon>WODetailsDS.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\WODetailsDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WODetailsDS.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="CustomDS\WODetailsDS.xss">
+      <DependentUpon>WODetailsDS.xsd</DependentUpon>
+    </Content>
+    <None Include="CustomDS\WorkLoadSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkLoadSummary.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="CustomDS\WorkLoadSummary.xss">
+      <DependentUpon>WorkLoadSummary.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\QReports.pubxml" />
+    <None Include="Properties\PublishProfiles\reports.pubxml" />
+    <None Include="SAADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="SAADataSet.xss">
+      <DependentUpon>SAADataSet.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="SAAModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SAAModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="SAAModel.edmx.diagram">
+      <DependentUpon>SAAModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\PerformanceManager\Index.cshtml" />
+    <Content Include="Views\PerformanceManager\MonthlyResponseTimeKpi.cshtml" />
+    <Content Include="Views\PerformanceManager\MonthlyResponseTimeKpiChart.cshtml" />
+    <Content Include="Views\PerformanceManager\MonthlyCompletionTimeKpi.cshtml" />
+    <Content Include="Views\PerformanceManager\MonthlyCompletionTimeKpiChart.cshtml" />
+    <Content Include="Views\PerformanceManager\ResponseTimeKpiSummary.cshtml" />
+    <Content Include="Views\PerformanceManager\ResponseTimeKpiSummaryChart.cshtml" />
+    <Content Include="Views\PerformanceManager\CompletionTimeKpiSummary.cshtml" />
+    <Content Include="Views\PerformanceManager\CompletionTimeKpiSummaryChart.cshtml" />
+    <Content Include="Views\PerformanceManager\WorkLoadSummary.cshtml" />
+    <Content Include="Views\PerformanceManager\WorkLoadSummaryChart.cshtml" />
+    <Content Include="Views\PerformanceManager\WorkOrderCompletionRate.cshtml" />
+    <Content Include="Views\PerformanceManager\WorkOrderCompletionRateChart.cshtml" />
+    <Content Include="Views\PerformanceManager\MonthlyBreakDownSummary.cshtml" />
+    <Content Include="Views\PerformanceManager\MonthlyBreakDownSummaryChart.cshtml" />
+    <Content Include="Views\PerformanceManager\RepeatedJobPercentage.cshtml" />
+    <Content Include="Views\PerformanceManager\RepeatedJobPercentageChart.cshtml" />
+    <Content Include="Views\WorkOrder\WorkOrderDetails.cshtml" />
+    <Content Include="Views\WorkOrder\OutstandingWorkOrders.cshtml" />
+    <Content Include="Views\PmWorkOrder\PmWorkOrderList.cshtml" />
+    <Content Include="Views\WorkOrder\CompletionTimeDetails.cshtml" />
+    <Content Include="Views\WorkOrder\ResponseTimeDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Reports\ResponseTimeKPI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\CompletionTimeDetails\CmpltTimeDetails.rdlc" />
+    <Content Include="Reports\MonthlyBreakDownSummary\MonthlyBreakDown.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\OutstandingWorkOrders\OutstandingWorkOrders.rdlc" />
+    <Content Include="Reports\PMWorkOrders\PMWorkDetails.rdlc" />
+    <EmbeddedResource Include="Reports\CompletionTimeKPISummary\CompletionTimeKPISummary.rdlc" />
+    <EmbeddedResource Include="Reports\MonthlyCompletionTimeKPI\MonthlyCompletionTimeKPISummary.rdlc" />
+    <EmbeddedResource Include="Reports\MonthlyResponseTimeKPI\MonthlyRespoTimeKpiDetails.rdlc" />
+    <EmbeddedResource Include="Reports\ResponseTimeDetails\RespoTimeDetails.rdlc" />
+    <EmbeddedResource Include="Reports\ResponseTimeKpiSummaryReport.rdlc" />
+    <Content Include="Reports\WorkLoadSummary\WorkLoadSumm.rdlc" />
+    <Content Include="Reports\WorkOrderCompletionRate\WoCmpltRate.rdlc" />
+    <Content Include="Reports\WorkOrderDetails\WoDetails.rdlc" />
+    <EmbeddedResource Include="Reports\ResponseTimeKPISummary\ResponseTimeKpiSumm.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50036</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50036/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

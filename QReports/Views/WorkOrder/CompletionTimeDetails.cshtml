@@ -1,0 +1,287 @@
+﻿
+@{
+    ViewBag.Title = "CompletionTimeDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="page-wrapping">
+        @*START BREADCRUMBS*@
+        <ul class="breadcrumb">
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Work Order</a></li>
+            <li class="active">Completion Time Details</li>
+        </ul>
+        @*END BREADCRUMBS*@
+
+        <h3>Filters Criteria</h3>
+        <h6>Report will be generated for Workorders that follow the filter criteria.</h6>
+        <h6>To retrieve a criteria select 'All' or leave the field blank whenever applicable.</h6>
+        <br />
+        <form action="~/Reports/CompletionTimeDetails/CmpltTimeDetails.aspx" class="form-horizontal" target="_blank">
+            <div class="row">
+                <div class="col-sm-7 col-sm-offset-5">
+                    <input type="submit" name="btngenreport" id="btngenreport" value="Generate Report" class="btn btn-warning" />
+                    <input type="submit" name="btngenreport" id="btnreset" value="Reset" class="btn btn-warning" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    @* From *@
+                    <div class="form-group">
+
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <label class="control-label col-sm-2">From</label>
+                            <div class='input-group col-sm-10' id='datetimepicker1'>
+
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+
+
+                                @if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["fromdatetime"] != null)
+                                {
+                                    <input type='text' class="form-control" name="fromdatetime" required value="@Request.Cookies["cmplttimedetails"]["fromdatetime"]" />
+                                }
+                                else
+                                {
+                                    <input type='text' class="form-control" name="fromdatetime" required />
+                                }
+
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    @* To *@
+                    <div class="form-group">
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <label class="control-label col-sm-2">To</label>
+                            <div class='input-group col-sm-10' id='datetimepicker2'>
+
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                                @if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["todatetime"] != null)
+                                {
+                                    <input type='text' class="form-control" name="todatetime" required value="@Request.Cookies["cmplttimedetails"]["todatetime"]" />
+                                }
+                                else
+                                {
+                                    <input type='text' class="form-control" name="todatetime" required />
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6"></div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    @* Work Order Type *@
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="wotype">Work Order Type</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="wotype" name="wotype">
+
+                                <option value="All">All</option>
+                                @foreach (var item in ViewBag.wotype)
+                                {
+                                    if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["wotype"] != null && item == Request.Cookies["cmplttimedetails"]["wotype"])
+                                    {
+                                        <option value="@item" selected>@item</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item">@item</option>
+                                    }
+
+                                }
+
+
+                                @*<option value="Corrective">Corrective</option>
+                                    <option value="Preventive">Preventive</option>
+                                    <option value="Predictive">Predictive</option>*@
+
+                            </select>
+                        </div>
+
+                    </div>
+
+                    @* Asset Group *@
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="asstgrp">Asset Group</label>
+                        <div class="col-lg-9">
+                            <select class="form-control" id="asstgrp" name="asstgrp">
+                                <option value="All">All</option>
+                                @foreach (var item in ViewBag.assgrp)
+                                {
+                                    if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["asstgrp"] != null && item == Request.Cookies["cmplttimedetails"]["asstgrp"])
+                                    {
+                                        <option value="@item" selected>@item</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item">@item</option>
+                                    }
+                                }
+
+                                @*<option value="AHU">AHU</option>
+                                    <option value="FCU">FCU</option>*@
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    @* Technician *@
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="tech">Technician</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="tech" name="tech">
+                                <option value="All">All</option>
+                                @foreach (var item in ViewBag.techrep)
+                                {
+                                    if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["tech"] != null && item == Request.Cookies["cmplttimedetails"]["tech"])
+                                    {
+                                        <option value="@item" selected>@item</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item">@item</option>
+                                    }
+                                }
+                                @*<option value="Corrective">Corrective</option>
+                    <option value="Preventive">Preventive</option>
+                    <option value="Predictive">Predictive</option>*@
+
+                            </select>
+                        </div>
+                    </div>
+
+                    @* Priority *@
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="priority">Priority</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="priority" name="priority">
+                                <option value="All">All</option>
+                                @foreach (var item in ViewBag.prio)
+                                {
+                                    if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["priority"] != null && item == Request.Cookies["cmplttimedetails"]["priority"])
+                                    {
+                                        <option value="@item" selected>@item</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item">@item</option>
+                                    }
+                                }
+                                @*<option value="Corrective">Corrective</option>
+                    <option value="Preventive">Preventive</option>
+                    <option value="Predictive">Predictive</option>*@
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+
+                    @* Locations *@
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="location">Location</label>
+                        <div class="col-lg-9">
+                            <select class="form-control" id="location" name="location">
+                                <option value="All">All</option>
+                                @foreach (var item in ViewBag.locs)
+                                {
+                                    if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["location"] != null && item == Request.Cookies["cmplttimedetails"]["location"])
+                                    {
+                                        <option value="@item" selected>@item</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item">@item</option>
+                                    }
+                                }
+                                @*<option value="AHU">AHU</option>
+                                    <option value="FCU">FCU</option>*@
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+
+                    @* Problem *@
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="problem">Problem</label>
+                        <div class="col-lg-9">
+                            @if (Request.Cookies["cmplttimedetails"] != null && Request.Cookies["cmplttimedetails"]["problem"] != null)
+                            {
+                                <input name="problem" id="problem" class="form-control" type="text" placeholder="Type here for a problem filter" value="@Request.Cookies["cmplttimedetails"]["problem"]">
+                            }
+                            else
+                            {
+                                <input name="problem" id="problem" class="form-control" type="text" placeholder="Type here for a problem filter">
+                            }
+                            @*<input name="problem" id="problem" class="form-control" type="text" placeholder="Type here for a problem filter">*@
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+</div>
+
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/Clean-Data-Timepicker-with-jQuery-Bootstrap-3/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'DD/MM/YYYY hh:mm:ss A'
+            });
+
+            $('#datetimepicker2').datetimepicker({
+                format: 'DD/MM/YYYY hh:mm:ss A'
+            });
+
+        });
+    </script>
+
+
+}
+
+
+
+
+

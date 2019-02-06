@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "MonthlyResponseTimeKpi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@*<h2>MonthlyResponseTimeKpi</h2>*@
+@*https://bootswatch.com/3/flatly/*@
+
+
+
+<div class="page-wrapping">
+
+
+    @*START BREADCRUMBS*@
+    <ul class="breadcrumb">
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Performance Manager</a></li>
+        <li class="active">Monthly Response Time KPI</li>
+    </ul>
+    @*END BREADCRUMBS*@
+
+    <h3>Filters Criteria</h3>
+    <h6>Report will be generated for Workorders that follow the filter criteria</h6>
+    <br />
+    <br />
+
+
+    <form class="form-horizontal" action='@Url.Action("MonthlyResponseTimeKpiChart","PerformanceManager")'>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="startmonth">Start month with year</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" id="startmonth" name="startmonth">
+
+                            @foreach (string month in ViewBag.Months)
+                            {
+
+                                <option value=@month>@month</option>
+                            }
+
+                            
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="startyear" name="startyear">
+                            @foreach (string years in ViewBag.years)
+                            {
+
+                                <option value=@years>@years</option>
+                            }
+              
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="trgtresponserate">Target Response Rate</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="trgtresponserate" name="trgtresponserate" placeholder="Enter Target Rate">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="asstgrp">Asset Group</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="asstgrp" name="asstgrp">
+                            @foreach (string asset in ViewBag.Assets)
+                            {
+
+                                <option value=@asset>@asset</option>
+                            }
+
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="startmonth">End month with year</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" id="tomonth" name="tomonth">
+
+                            @foreach (string month in ViewBag.Months)
+                            {
+
+                                <option value=@month>@month</option>
+                            }
+
+
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="startyear" name="startyear">
+                            @foreach (string years in ViewBag.years)
+                            {
+
+                                <option value=@years>@years</option>
+                            }
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="sotypes">Work Order Types</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="wotype" name="wotypep">
+                            @foreach (string wotype in ViewBag.WoTypes)
+                            {
+
+                                <option value=@wotype>@wotype</option>
+                            }
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="col-sm-12">
+                <div class="pull-right">
+                    <input type="submit" name="btngenreport" id="btngenreport" value="Generate Report" class="btn btn-warning" />
+                    <input type="submit" name="btngenreport" id="btnreset" value="Reset" class="btn btn-warning" />
+                </div>
+                
+            </div>
+        </div>
+
+        
+
+    </form>
+
+</div>
+
+

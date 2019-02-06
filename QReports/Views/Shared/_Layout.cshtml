@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+ 
+
+    <!-- Bootstrap Date-Picker Plugin -->
+
+
+    <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Clean-Data-Timepicker-with-jQuery-Bootstrap-3/build/css/bootstrap-datetimepicker.css" />
+    
+
+
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+
+        #datetimepicker1 .timepicker-picker table td a span,
+        #datetimepicker1 .timepicker-picker table td,
+        #datetimepicker1 .timepicker-picker table td span {
+            height: 30px !important;
+            line-height: 30px !important;
+            width: 30px !important;
+            line-height: 30px !important;
+            padding: 0px !important;
+        }
+
+        #datetimepicker2 .timepicker-picker table td a span,
+        #datetimepicker2 .timepicker-picker table td,
+        #datetimepicker2 .timepicker-picker table td span {
+            height: 30px !important;
+            line-height: 30px !important;
+            width: 30px !important;
+            line-height: 30px !important;
+            padding: 0px !important;
+        }
+
+
+        .no-js #loader { display: none;  }
+      .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+      .se-pre-con {
+      	position: fixed;
+      	left: 0px;
+      	top: 0px;
+      	width: 100%;
+      	height: 100%;
+      	z-index: 9999;
+      	background: url(https://i.redd.it/ounq1mw5kdxy.gif) center no-repeat #fff;
+      }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="se-pre-con"></div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+      $(window).load(function() {
+      // Animate loader off screen
+      $(".se-pre-con").fadeOut("slow");;
+      });
+    </script>
+
+</body>
+</html>

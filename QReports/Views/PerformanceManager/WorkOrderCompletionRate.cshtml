@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "WorkOrderCompletionRate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="page-wrapping">
+        @*START BREADCRUMBS*@
+        <ul class="breadcrumb">
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Performance Manager</a></li>
+            <li class="active">Work Order Completion Rate</li>
+        </ul>
+        @*END BREADCRUMBS*@
+
+        <h3>Filters Criteria</h3>
+        <h6>Report will be generated for Workorders that follow the filter criteria.</h6>
+        <h6>To retrieve a criteria select 'All' or leave the field blank whenever applicable.</h6>
+        <br />
+        <br />
+        <form action="~/Reports/WorkOrderCompletionRate/WoCmpltRateWebForm.aspx" class="form-horizontal" target="_blank">
+            <div class="row">
+                <div class="col-sm-7 col-sm-offset-5">
+                    <input type="submit" name="btngenreport" id="btngenreport" value="Generate Report" class="btn btn-warning" />
+                    <input type="submit" name="btngenreport" id="btnreset" value="Reset" class="btn btn-warning" />
+                </div>
+
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <label class="control-label col-sm-2">From</label>
+                            <div class='input-group col-sm-10' id='datetimepicker1'>
+
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+
+
+                                @if (Request.Cookies["wocmpltrate"] != null && Request.Cookies["wocmpltrate"]["fromdatetime"] != null)
+                                {
+                                    <input type='text' class="form-control" name="fromdatetime" required value="@Request.Cookies["wocmpltrate"]["fromdatetime"]" />
+                                }
+                                else
+                                {
+                                    <input type='text' class="form-control" name="fromdatetime" required />
+                                }
+                                @*<input type='text' class="form-control" name="fromdatetime" required/>*@
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <label class="control-label col-sm-2">To</label>
+                            <div class='input-group col-sm-10' id='datetimepicker2'>
+
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                                @if (Request.Cookies["wocmpltrate"] != null && Request.Cookies["wocmpltrate"]["todatetime"] != null)
+                                {
+                                    <input type='text' class="form-control" name="todatetime" required value="@Request.Cookies["wocmpltrate"]["todatetime"]" />
+                                }
+                                else
+                                {
+                                    <input type='text' class="form-control" name="todatetime" required />
+                                }
+                                @*<input type='text' class="form-control" name="todatetime" required/>*@
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <label class="control-label col-sm-2" for="wotype">Work Order Type</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="wotype" name="wotype">
+                                    <option value="All">All</option>
+                                    @foreach (var item in ViewBag.wotype)
+                                    {
+                                        if (Request.Cookies["wocmpltrate"] != null && Request.Cookies["wocmpltrate"]["wotype"] != null && item == Request.Cookies["wocmpltrate"]["wotype"])
+                                        {
+                                            <option value="@item" selected>@item</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                        @*<option value="@item">@item</option>*@
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+  
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/Clean-Data-Timepicker-with-jQuery-Bootstrap-3/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'DD/MM/YYYY hh:mm:ss A'
+            });
+
+            $('#datetimepicker2').datetimepicker({
+                format: 'DD/MM/YYYY hh:mm:ss A'
+            });
+
+        });
+    </script>
+
+
+}
+
+
+
+

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WOCmpltRateDS" targetNamespace="http://tempuri.org/WOCmpltRateDS.xsd" xmlns:mstns="http://tempuri.org/WOCmpltRateDS.xsd" xmlns="http://tempuri.org/WOCmpltRateDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WOCmpltRateDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="WOCmpltRateDS" msprop:Generator_UserDSName="WOCmpltRateDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtWOCmpltRate" msprop:Generator_TableClassName="dtWOCmpltRateDataTable" msprop:Generator_TableVarName="tabledtWOCmpltRate" msprop:Generator_RowChangedName="dtWOCmpltRateRowChanged" msprop:Generator_TablePropName="dtWOCmpltRate" msprop:Generator_RowDeletingName="dtWOCmpltRateRowDeleting" msprop:Generator_RowChangingName="dtWOCmpltRateRowChanging" msprop:Generator_RowEvHandlerName="dtWOCmpltRateRowChangeEventHandler" msprop:Generator_RowDeletedName="dtWOCmpltRateRowDeleted" msprop:Generator_RowClassName="dtWOCmpltRateRow" msprop:Generator_UserTableName="dtWOCmpltRate" msprop:Generator_RowEvArgName="dtWOCmpltRateRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MonthYear" msprop:Generator_ColumnVarNameInTable="columnMonthYear" msprop:Generator_ColumnPropNameInRow="MonthYear" msprop:Generator_ColumnPropNameInTable="MonthYearColumn" msprop:Generator_UserColumnName="MonthYear" type="xs:string" minOccurs="0" />
+              <xs:element name="IssuedWo" msprop:Generator_ColumnVarNameInTable="columnIssuedWo" msprop:Generator_ColumnPropNameInRow="IssuedWo" msprop:Generator_ColumnPropNameInTable="IssuedWoColumn" msprop:Generator_UserColumnName="IssuedWo" type="xs:string" minOccurs="0" />
+              <xs:element name="CompletedWo" msprop:Generator_ColumnVarNameInTable="columnCompletedWo" msprop:Generator_ColumnPropNameInRow="CompletedWo" msprop:Generator_ColumnPropNameInTable="CompletedWoColumn" msprop:Generator_UserColumnName="CompletedWo" type="xs:string" minOccurs="0" />
+              <xs:element name="PercentCmplt" msprop:Generator_ColumnVarNameInTable="columnPercentCmplt" msprop:Generator_ColumnPropNameInRow="PercentCmplt" msprop:Generator_ColumnPropNameInTable="PercentCmpltColumn" msprop:Generator_UserColumnName="PercentCmplt" type="xs:string" minOccurs="0" />
+              <xs:element name="OutStandingWo" msprop:Generator_ColumnVarNameInTable="columnOutStandingWo" msprop:Generator_ColumnPropNameInRow="OutStandingWo" msprop:Generator_ColumnPropNameInTable="OutStandingWoColumn" msprop:Generator_UserColumnName="OutStandingWo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

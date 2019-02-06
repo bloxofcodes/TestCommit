@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>*@
+
+
+<div class="container">
+    <div class="row">
+        <h1>Reports</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Performance Management</h4>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <a href='@Url.Action("MonthlyResponseTimeKpi","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Monthly Response Time KPI</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("MonthlyCompletionTimeKpi","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Monthly Completion Time KPI</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("ResponseTimeKpiSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Response Time KPI Summary</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("CompletionTimeKpiSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Completion Time KPI Summary</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("WorkLoadSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Work Load Summary</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("WorkOrderCompletionRate","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Work Order Completion Rate</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("MonthlyBreakDownSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Monthly Breakdown Summary</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("RepeatedJobPercentage","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Repeated Job Percentage</a>
+                </div>
+
+            </div>
+            
+        </div>
+        <div class="col-md-4">
+            <h4>Work Order</h4>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <a href='@Url.Action("WorkOrderDetails","WorkOrder")'><span class="glyphicon glyphicon-link"></span>    Work Order Details</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("OutstandingWorkOrders","WorkOrder")'><span class="glyphicon glyphicon-link"></span>    Outstanding Work Orders</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("ResponseTimeKpiSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Repeated Work Orders</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("CompletionTimeKpiSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Response Time Details</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("CompletionTimeDetails","WorkOrder")'><span class="glyphicon glyphicon-link"></span>    Completion Time Details</a>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>Preventive Maintenance</h4>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <a href='@Url.Action("MonthlyResponseTimeKpi","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Preventive Maintenance List</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("MonthlyCompletionTimeKpi","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Master PM Schedule</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("PmWorkOrderList","PmWorkOrder")'><span class="glyphicon glyphicon-link"></span>    PM Work Orders List</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("CompletionTimeKpiSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Preventive Maintenance History</a>
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("WorkLoadSummary","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Asset PM Details</a>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Customize Reports</h4>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    
+                    <a href='@Url.Action("MonthlyResponseTimeKpi","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Response Time - Exceed KPI</a>
+
+                </div>
+                <div class="row">
+                    <a href='@Url.Action("MonthlyCompletionTimeKpi","PerformanceManager")'><span class="glyphicon glyphicon-link"></span>    Completion Time - Exceed KPI</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
